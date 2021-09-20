@@ -1,0 +1,59 @@
+* {
+    color: black;
+  }
+
+td, th {
+    outline: none;
+    padding: 20px;
+}
+
+th {
+    font-weight: normal;
+}
+
+td {
+    border: 1px solid black;
+    font-weight: bold;
+    text-align: center;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+.oranje {
+    background-color: orange;
+}
+.roze {
+    background-color: violet;
+}
+.blauw {
+    background-color: lightskyblue;
+}
+.geel {
+    background-color: yellow;
+}
+.grey {
+    background-color: lightgrey;
+}
+.geenkleur {
+    border: none;
+}
+
+td:hover {
+    cursor: pointer;
+}
+
+.oranje:hover {
+    background-color: green;
+}
+.roze:hover {
+    background-color: green;
+}
+.blauw:hover {
+    background-color: green;
+}
+.geel:hover {
+    background-color: green;
+}
+

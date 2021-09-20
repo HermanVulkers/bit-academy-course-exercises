@@ -1,0 +1,66 @@
+body {
+    background-color: lightgrey;
+}
+
+nav {
+    background-color: lightskyblue;
+    text-align: center;
+}
+
+div {
+    background-color: darkgrey;
+}
+
+span {
+    color:indigo;
+}
+
+h1 {
+    color:indigo;
+}
+
+h2 {
+    font-size: 18px;
+    color:darkgreen;
+}
+
+ol {
+    font-size: 14px;
+    color:blue;
+}
+
+img {
+    width: 30%;
+    height: 30%;
+}
+
+article {
+    background-color: darkgrey;
+}
+
+header {
+    border-bottom: 2px solid black; 
+}
+
+footer {
+    background-color: lightskyblue;
+    text-align: center;
+}
+
+form {
+    min-width: 200px;
+}
+
+#submit {
+    border-radius: 5px;
+}
+
+#opmerking {
+    outline: none;
+    border-color: red;
+    border-width: 3px;
+}
+
+#opmerking:focus {
+    border-color: green;
+}
