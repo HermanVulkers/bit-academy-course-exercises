@@ -2,7 +2,11 @@
 
 function parseToInteger($value)
 {
-    // TODO Schrijf jouw code hier
+    if (is_numeric($value) == true) {
+        return intval($value);
+    } else {
+        echo "Input moet een valide getal zijn";
+    }
 }
 
 // Pas de code hieronder niet aan!
