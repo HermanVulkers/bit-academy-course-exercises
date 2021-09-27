@@ -6,7 +6,7 @@ array_push($list, $product);
 
 function printList($list)
 {
-    echo "Je boodschappen lijstje bevat nu:" . PHP_EOL;
+    echo "Je boodschappen lijstje bevad nu:" . PHP_EOL;
     foreach ($list as &$value) {
         echo $value . PHP_EOL;
     }
