@@ -16,18 +16,27 @@ var bal = {
     balPositie: "links",
 
     gooi: function () {
-        if (this.balPositie !== "links") {
-            let number = Math.round(Math.random() * 2);
-            if (number === 0) {
-                this.referenceErrorType();
-            } else if (number === 1) {
-                this.typeErrorType();
-            } else {
-                throw Error("bal in verkeerde positie")
+        try {
+            if (this.balPositie !== "links") {
+                let number = Math.round(Math.random() * 2);
+                if (number === 0) {
+                    this.referenceErrorType();
+                } else if (number === 1) {
+                    this.typeErrorType();
+                } else {
+                    throw Error("bal in verkeerde positie")
+                }
+            }
+            this.draw(300, 50);
+            this.balPositie = "midden";
+        } catch (error) {
+            if (error instanceof referenceErrorType) {
+                window.alert("De bal is in de verkeerde positie, druk op reset!");
+            }
+            if (error instanceof typeErrorType) {
+                window.alert("De bal is in de verkeerde positie, druk op reset!");
             }
         }
-        this.draw(300, 50);
-        this.balPositie = "midden";
     },
 
     vang: function () {
