@@ -1,34 +1,13 @@
-function errorHandler(error) {
-    if (error instanceof typeErrorType) {
-        document.getElementById("errormessage").innerHTML = "Dit is een typeError";
-    }
-    if (error instanceof referenceErrorType) {
-        document.getElementById("errormessage").innerHTML = "Dit is een referenceError";
-    } 
-}
-
 function gooiButton() {
-    try {
-        bal.gooi();
-    } catch (error) {
-        errorHandler(error);
-    }
+    bal.gooi();
 }
 
 function vangButton() {
-    try {
-        bal.vang();
-    } catch (error) {
-        errorHandler(error);
-    }
+    bal.vang();
 }
 
 function resetButton() {
-    try {
-        bal.reset();
-    } catch (error) {
-        errorHandler(error);
-    }
+    bal.reset();
 }
 
 
