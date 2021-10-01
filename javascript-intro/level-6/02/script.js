@@ -1,8 +1,8 @@
 function errorHandler(error) {
-    if (error instanceof typeErrorType) {
+    if (error instanceof TypeError) {
         document.getElementById("errormessage").innerHTML = "Dit is een typeError";
     }
-    if (error instanceof referenceErrorType) {
+    if (error instanceof ReferenceError) {
         document.getElementById("errormessage").innerHTML = "Dit is een referenceError";
     } 
 }

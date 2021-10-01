@@ -10,16 +10,20 @@ define('MONEY_UNITS', array(
 ));
 
 $input = $argv[1];
-inputValidatie($input);
+
 try {
-    function inputValidatie($input)
-    {
-        if (is_numeric($input) == false || $input <= 0) {
-            throw new Exception("Geen geldige input want geen positief getal");
-        }
-    }
+    inputValidatie($input);
+    afrondingCenten($bedrag);
 } catch (Exception $error) {
-    echo "Error opgevangen: " . $error->getMessage();
+    echo "Error opgevangen: " . $error->getMessage() . PHP_EOL;
+    exit();
+}
+
+function inputValidatie($input)
+{
+    if (is_numeric($input) == false || $input <= 0) {
+        throw new Exception('Dit is geen geldige input. Input moet een positief getal zijn.');
+    }
 }
 
 $bedrag = $argv[1];
