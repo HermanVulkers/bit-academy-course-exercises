@@ -21,8 +21,14 @@ try {
 
 function inputValidatie($input)
 {
-    if (is_numeric($input) == false || $input <= 0) {
-        throw new Exception('Dit is geen geldige input. Input moet een positief getal zijn.');
+    if (is_numeric($input) == false) {
+        throw new Exception('Dit is geen geldige input. ');
+    }
+    if ($input == 0) {
+        throw new Exception('Je krijgt geen wisselgeld.');
+    }
+    if ($input < 0) {
+        throw new Exception('Input moet een positief getal zijn.');
     }
 }
 
