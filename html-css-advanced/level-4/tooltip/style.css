@@ -1,0 +1,25 @@
+.tooltip {
+  position: fixed;
+  top: 10px;
+}
+
+.icon {
+  position: fixed;
+  top: 5px;
+  right: 5px;
+  z-index: 1;
+}
+
+.tooltip-content {
+  display: none;
+}
+
+.icon:hover ~ .tooltip-content {
+  display: block;
+  position: sticky;
+  width: 100%;
+  top: 10px;
+  background-color: black;
+  color: white;
+  padding: 10px;
+}

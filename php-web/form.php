@@ -1,27 +1,28 @@
-<?php
-echo "<!DOCTYPE html>";
-echo "<head>";
-echo "<title>Bit Academy</title>";
-echo "</head>";
-echo "<body>";
-echo "<h1>Meld je aan voor de nieuwsbrief van Bit Academy</h1>";
-echo "<form action=\"/form.php\" method=\"post\">";
-echo "<label for=\"email\"Voer je e-mailadres in:</label>";
-echo "<input type=\"email\" id=\"email\" name=\"email\">";
-echo "<input type=\"submit\" value=\"Meld aan!\">";
-echo "</form>";
-echo "</body>";
-echo "</html>";
+<!DOCTYPE html>
+    <head>
+        <title>Bit Academy</title>
+    </head>
+    <body>
+        <h1>Meld je aan voor de nieuwsbrief van Bit Academy</h1>
+        <form action='form.php' method="post" novalidate>
+            <label for='email'>Voer je e-mailadres in:</label>
+            <input type='email' id='email' name='email'>
+            <input type='submit' value='Meld aan!'>
+        </form>
+        
+        <?php
+        if (empty($_POST) == true) {
+            exit;
+        } else {
+            if (filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
+                header('Location: success.php');
+            } else {
+                echo 'LET OP: ' . $_POST['email'] . ' is geen valide email address';
+            }
+        }
+        ?>
 
-$email = $_POST["email"];
+    </body>
+</html>
 
-if (empty($_POST) == true) {
-    echo ("");
-    exit;
-}
 
-if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
-    header('Location: success.php');
-} else {
-    echo ("LET OP: $email is not a valid email address");
-}
