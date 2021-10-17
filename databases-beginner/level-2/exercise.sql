@@ -1,2 +1,4 @@
-CREATE DATABASE Sterrenstelsel
-
+CREATE TABLE `Planeten` (
+  `naam` varchar(256) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+COMMIT;
