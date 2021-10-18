@@ -39,7 +39,7 @@ header > a {
   align-items: center;
   background-color: #1b1b1b;
   color: #b3b9c5;
-  margin-right: 20px;
+  margin-right: 24px;
   border: none;
 }
 
@@ -65,8 +65,8 @@ header > a {
 nav {
   display: flex;
   flex-direction: row;
-  padding-left: 20px;
-  padding-right: 20px;
+  margin-left: 24px;
+  margin-right: 24px;
 }
 
 .navleft > a {
@@ -79,15 +79,22 @@ nav > a {
 }
 
 nav > a > img {
-  height: 30px;
-  opacity: 0.9;
+  height: 28px;
+  opacity: 0.8;
+  display: flex;
+  align-items: center;
 }
 
-.hero {
+nav > a > img:hover {
+  opacity: 1;
+}
+
+article {
   background-color: #272727;
   display: flex;
+  align-items: center;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
 }
 
 article a {
@@ -106,8 +113,12 @@ article a {
 h1 {
   color: #eeeeee;
   font-size: 40px;
-  padding-top: 20px;
+  margin-top: 48px;
   padding-bottom: 10px;
+}
+
+#heroheader {
+  text-align: left;
 }
 
 h2 {
@@ -115,6 +126,7 @@ h2 {
   line-height: 1.2;
   margin: 0 0 1.5rem;
   scroll-margin-top: 60px;
+  font-size: 2rem;
 }
 
 h2:not(:first-child),
@@ -172,11 +184,12 @@ article a:hover {
 }
 
 button > p {
-  color: black;
+  color: rgb(0, 0, 0);
   font-weight: 500;
+  line-height: 2em;
 }
 
-button > img {
+.container > button > img {
   margin-right: 10px;
   height: 30px;
 }
@@ -188,6 +201,8 @@ button > img {
 }
 
 .flex-header > a {
+  display: flex;
+  align-items: center;
   color: rgb(238, 238, 238);
   font-size: 16px;
 }
@@ -196,7 +211,7 @@ button > img {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  background-color: rgb(17, 17, 17);
+  background-color: #1b1b1b;
 }
 
 a.post {
@@ -211,8 +226,8 @@ a.post {
 }
 
 a.post:hover {
-  border: 1px solid rgb(131, 131, 131);
-  background-color: rgb(20, 20, 20);
+  border: 1px solid rgb(75, 75, 75);
+  background-color: #1b1b1b;
 }
 
 a.post time {
@@ -222,6 +237,213 @@ a.post time {
   text-align: center;
 }
 
+footer > section {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #1b1b1b;
+  height: 28px;
+}
+
+footer > section > nav > a > img {
+  height: 18px;
+}
+
+footer a,
+footer span {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #eeeeee;
+  font-size: 13px;
+  line-height: 28px;
+  padding: 0 10px;
+}
+
+/* Tooltip container */
 .tooltip {
-  display: none;
+  position: relative;
+  display: inline-block;
+}
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: #1b1b1b;
+  color: rgb(240, 240, 240);
+  text-align: center;
+  padding: 5px 0;
+  border: 1px solid rgb(75, 75, 75);
+  border-radius: 0px;
+
+  width: 100px;
+  top: 200%;
+  left: 0%;
+
+  /* Position the tooltip text - see examples below! */
+  position: absolute;
+  z-index: 1;
+}
+
+.tooltip .tooltiptext::after {
+  content: " ";
+  position: absolute;
+  bottom: 100%; /* At the top of the tooltip */
+  left: 10%;
+  margin-left: -5px;
+  border-width: 8px;
+  border-style: solid;
+  border-color: transparent transparent rgb(75, 75, 75) transparent;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+.tooltipright {
+  position: relative;
+  display: inline-block;
+}
+
+/* Tooltip text */
+.tooltipright .tooltiptextright {
+  visibility: hidden;
+  width: 120px;
+  background-color: #1b1b1b;
+  color: rgb(240, 240, 240);
+  text-align: center;
+  padding: 5px 0;
+  border: 1px solid rgb(75, 75, 75);
+  border-radius: 0px;
+
+  width: 100px;
+  top: 200%;
+  right: 0%;
+
+  /* Position the tooltip text - see examples below! */
+  position: absolute;
+  z-index: 1;
+}
+
+.tooltipright .tooltiptextright::after {
+  content: " ";
+  position: absolute;
+  bottom: 100%; /* At the top of the tooltip */
+  right: 10%;
+  margin-left: -5px;
+  border-width: 8px;
+  border-style: solid;
+  border-color: transparent transparent rgb(75, 75, 75) transparent;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltipright:hover .tooltiptextright {
+  visibility: visible;
+}
+
+article > .container > h1 {
+  text-align: center;
+}
+
+.post-details {
+  text-align: center;
+  color: rgb(124, 124, 124);
+}
+
+article > .container > p {
+  line-height: 175%;
+}
+
+.blogyear {
+  line-height: 1.6em;
+  border-bottom: 3px solid rgb(54, 54, 54);
+}
+
+.description {
+  font-size: 18px;
+}
+
+@media screen and (max-width: 600px) {
+  .desktop-only {
+    display: none;
+  }
+  .themeswitcher {
+    display: none;
+  }
+}
+
+.projectscontainer {
+  display: grid;
+  max-width: 1350px;
+  grid-gap: 1rem;
+  grid-template-columns: repeat(2, 50%);
+  padding: 24px;
+}
+
+.project {
+  background-color: rgb(31, 31, 31);
+  border: 1px solid rgb(10, 10, 10);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.project > h2 {
+  font-size: 24px;
+  margin: 0;
+}
+
+.project > p {
+  text-align: center;
+}
+
+.tagbox {
+  display: flex;
+  align-items: center;
+  margin: 24px 0;
+}
+
+.tagbox > p {
+  color: white;
+  padding: 3px 10px;
+  margin: 0 5px;
+  border: 1px solid grey;
+}
+
+#aboutmephoto {
+  height: 200px;
+}
+
+ul {
+  color: #b3b9c5;
+  line-height: 1.6em;
+  list-style: none;
+}
+
+li::before {
+  content: ">";
+  color: #77a2ff;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+}
+
+article {
+  min-height: 100vh;
+}
+
+#under-construction {
+  display: flex;
+  align-items: center;
+  margin-right: 130px;
+}
+
+#construction {
+  height: 50px;
 }
