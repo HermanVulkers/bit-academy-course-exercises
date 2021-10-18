@@ -1,7 +1,7 @@
 * {
   margin: 0;
   padding: 0;
-  font-family: "DM Sans", sans-serif;
+  font-family: "Rubik", sans-serif;
 }
 
 header {
@@ -99,7 +99,7 @@ article {
 
 article a {
   border-bottom: 2px solid #77a2ff;
-  font-weight: 600;
+  font-weight: 400;
   text-decoration: none;
 }
 
@@ -115,6 +115,7 @@ h1 {
   font-size: 40px;
   margin-top: 48px;
   padding-bottom: 10px;
+  font-weight: 450;
 }
 
 #heroheader {
@@ -123,10 +124,11 @@ h1 {
 
 h2 {
   color: #77a2ff;
-  line-height: 1.2;
+  line-height: 0.8;
   margin: 0 0 1.5rem;
   scroll-margin-top: 60px;
   font-size: 2rem;
+  font-weight: 400;
 }
 
 h2:not(:first-child),
@@ -143,7 +145,8 @@ h3 {
 
 p {
   color: #b2b8c4;
-  font-size: 16px;
+  font-size: 18px;
+  font-weight: 200;
 }
 
 .introduction {
@@ -155,6 +158,7 @@ p {
 
 .introduction > p {
   font-size: 18px;
+  font-weight: 400;
 }
 
 .introduction > img {
@@ -187,6 +191,11 @@ button > p {
   color: rgb(0, 0, 0);
   font-weight: 500;
   line-height: 2em;
+}
+
+button:hover {
+  background-color: #acc6ff;
+  cursor: pointer;
 }
 
 .container > button > img {
@@ -364,6 +373,7 @@ article > .container > p {
 
 .description {
   font-size: 18px;
+  font-weight: 400;
 }
 
 @media screen and (max-width: 600px) {
@@ -424,6 +434,8 @@ ul {
   color: #b3b9c5;
   line-height: 1.6em;
   list-style: none;
+  font-size: 18px;
+  font-weight: 200;
 }
 
 li::before {
