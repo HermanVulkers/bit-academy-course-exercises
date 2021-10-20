@@ -16,7 +16,7 @@ class Header extends HTMLElement {
                 </a>
             </div>
             
-            <button class="themeswitcher">
+            <button class="themeswitcher" id="themeswitcher">
                 <span>Dark</span>
                 <img src="images/moon.png" alt="Choose website theme">
             </button>
