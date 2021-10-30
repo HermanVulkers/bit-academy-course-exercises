@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock, paper, scissors</title>
+    <script type="text/javascript" src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1 id='player'>Player 1, choose your option!</h1>
+
+    <div id='buttons'>
+        <button class="options">Rock<img src="rock.png" alt="Hand gesture of rock"></button>
+        <button class="options">Paper<img src="paper.png" alt="Hand gesture of paper"></button>
+        <button class="options">Scissors<img src="scissors.png" alt="Hand gesture of scissors"></button> 
+    </div>
+    <br><br>
+    <div id='result'></div>
+
+   <script>
+        const options = document.querySelectorAll(".options");
+        var timesClicked = 0;
+
+        console.log(options);
+
+        let playerOneInput = "";
+        let playerTwoInput = "";
+
+        options.forEach((option) => {
+            option.addEventListener("click", function () {
+                timesClicked++;
+                console.log(timesClicked);
+
+                if (timesClicked == 1) {
+                    playerOneInput = this.textContent;
+                    document.getElementById("player").innerHTML = "Player 2, choose your option!"
+                } else {
+                    playerTwoInput = this.textContent; 
+                };
+                
+                console.log(playerOneInput);
+                console.log(playerTwoInput);
+
+                if (timesClicked == 2) {
+                    compareInputs(playerOneInput, playerTwoInput);
+                }
+
+            });
+            
+        });
+
+        function compareInputs(playerOneInput, playerTwoInput) {
+
+            // Tie check
+            if (playerOneInput === playerTwoInput) {
+            document.getElementById("result").innerHTML = "Its a Tie!"
+            return;
+            }
+
+            // Rock
+            if (playerOneInput === "Rock") {
+                if (playerTwoInput === "Scissors") {
+                    document.getElementById("result").innerHTML = "Player one wins!";
+                } else {
+                    document.getElementById("result").innerHTML = "Player two wins!";
+                }
+            }
+
+            // Paper
+            else if (playerOneInput === "Paper") {
+                if (playerTwoInput === "Rock") {
+                    document.getElementById("result").innerHTML = "Player one wins!";
+                } else {
+                    document.getElementById("result").innerHTML = "Player two wins!";
+                }
+            }
+
+            // Scissors
+            else {
+                if (playerTwoInput === "Paper") {
+                    document.getElementById("result").innerHTML = "Player one wins!";
+                } else {
+                    document.getElementById("result").innerHTML = "Player two wins!";
+                }
+            }
+        }
+   </script>
+
+</body>
+</html>

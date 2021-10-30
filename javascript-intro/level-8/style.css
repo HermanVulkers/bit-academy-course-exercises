@@ -1,0 +1,10 @@
+#buttons {
+  display: flex;
+  flex-direction: row;
+}
+
+button {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+}

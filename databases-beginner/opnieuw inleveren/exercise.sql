@@ -1,10 +1,3 @@
-TRUNCATE TABLE planeten;
-
-ALTER TABLE planeten
-ADD diameter int(11),
-ADD afstand int(11),
-ADD massa int(11);
-
 INSERT INTO planeten (naam, diameter, afstand, massa)
 VALUES ('Zon', 1392000, 0, 332946),
 ('Mercurius', 4880, 57910000, 0),
@@ -23,3 +16,11 @@ ADD bezoekdatum date;
 
 INSERT INTO planeten (naam, diameter, afstand, massa, bezoekdatum)
 VALUES ('Maan', '3476', '150000000', '0', '1991-12-12');
+
+UPDATE planeten
+SET bezoekdatum = '1969-07-20'
+WHERE naam = 'Maan';
+
+UPDATE planeten
+SET bezoekdatum = '1900-01-01'
+WHERE naam = 'Aarde';

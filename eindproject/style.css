@@ -95,23 +95,23 @@ nav {
   margin-right: 24px;
 }
 
-.navleft > a {
+.navleft a {
   padding-right: 15px;
 }
 
-nav > a {
+nav a {
   display: flex;
   align-items: center;
 }
 
-nav > a > img {
+nav a img {
   height: 28px;
   opacity: 0.8;
   display: flex;
   align-items: center;
 }
 
-nav > a > img:hover {
+nav a img:hover {
   opacity: 1;
 }
 
@@ -144,7 +144,7 @@ h1 {
   font-weight: 450;
 }
 
-#heroheader {
+#leftalignedh1 {
   text-align: left;
 }
 
@@ -179,15 +179,15 @@ p {
   display: flex;
   width: 100%;
   line-height: 175%;
-  margin-bottom: 0px;
+  margin-bottom: 15px;
 }
 
-.introduction > p {
+.introduction p {
   font-size: 18px;
   font-weight: 400;
 }
 
-.introduction > img {
+.introduction img {
   height: 140px;
   margin-left: 15px;
 }
@@ -202,7 +202,7 @@ article a:hover {
   color: black;
 }
 
-.container > button {
+.container button {
   border: none;
   display: flex;
   flex-direction: row;
@@ -213,10 +213,11 @@ article a:hover {
   margin-bottom: 24px;
 }
 
-button > p {
+button {
   color: rgb(0, 0, 0);
   font-weight: 400;
   line-height: 1.6em;
+  font-size: 18px;
 }
 
 article button:hover {
@@ -224,7 +225,7 @@ article button:hover {
   cursor: pointer;
 }
 
-.container > button > img {
+.container button img {
   margin-right: 10px;
   height: 30px;
 }
@@ -235,7 +236,7 @@ article button:hover {
   justify-content: space-between;
 }
 
-.flex-header > a {
+.flex-header a {
   display: flex;
   align-items: center;
   color: rgb(238, 238, 238);
@@ -273,7 +274,7 @@ a.post time {
   text-align: center;
 }
 
-footer > section {
+footer section {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -282,7 +283,7 @@ footer > section {
   height: 28px;
 }
 
-footer > section > nav > a > img {
+footer section nav a img {
   height: 18px;
 }
 
@@ -298,7 +299,7 @@ footer span {
 }
 
 footer a:hover,
-footer a > span:hover {
+footer a span:hover {
   color: #eeeeee;
 }
 
@@ -385,7 +386,7 @@ footer a > span:hover {
   visibility: visible;
 }
 
-article > .container > h1 {
+article .container h1 {
   text-align: center;
 }
 
@@ -394,7 +395,7 @@ article > .container > h1 {
   color: rgb(124, 124, 124);
 }
 
-article > .container > p {
+article .container p {
   line-height: 175%;
 }
 
@@ -403,12 +404,17 @@ article > .container > p {
   border-bottom: 3px solid rgb(54, 54, 54);
 }
 
+.blogimage {
+  width: 100%;
+  margin: 18px 0px;
+}
+
 .description {
   font-size: 18px;
   font-weight: 400;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 700px) {
   .desktop-only {
     display: none;
   }
@@ -436,12 +442,12 @@ article > .container > p {
   align-items: center;
 }
 
-.project > h2 {
+.project h2 {
   font-size: 24px;
   margin: 0;
 }
 
-.project > p {
+.project p {
   text-align: center;
 }
 
@@ -652,6 +658,10 @@ body.light-theme article {
   background-color: rgb(251, 251, 251);
 }
 
+body.light-theme .project a {
+  font-weight: 300;
+}
+
 body.light-theme article button {
   background-color: rgb(172, 198, 255);
 }
@@ -758,6 +768,15 @@ body.light-theme #mc-embedded-subscribe {
 
 body.light-theme #mc-embedded-subscribe:hover {
   background-color: rgb(151, 184, 255);
+}
+
+body.light-theme article a {
+  color: #343434;
+  font-weight: 400;
+}
+
+body.light-theme .tagbox a:hover {
+  background-color: rgb(240, 240, 240);
 }
 
 /* Mailchimp */

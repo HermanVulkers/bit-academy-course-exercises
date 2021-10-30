@@ -1,0 +1,1 @@
+/* Alle JavaScript code zit in de HTML */
