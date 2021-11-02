@@ -11,6 +11,7 @@ header {
   align-items: center;
   height: 35px;
   background-color: #1b1b1b;
+  min-width: 500px;
 }
 
 header a {
@@ -81,11 +82,12 @@ header a:hover {
 .navbar {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   height: 59px;
   background-color: #333;
   border-bottom: 1px solid rgb(75, 75, 75);
+  min-width: 500px;
 }
 
 nav {
@@ -96,7 +98,7 @@ nav {
 }
 
 .navleft a {
-  padding-right: 15px;
+  padding: 0 10px;
 }
 
 nav a {
@@ -121,6 +123,7 @@ article {
   align-items: center;
   flex-direction: column;
   justify-content: flex-start;
+  min-width: 500px;
 }
 
 article a {
@@ -281,6 +284,7 @@ footer section {
   justify-content: space-between;
   background-color: #1b1b1b;
   height: 28px;
+  min-width: 500px;
 }
 
 footer section nav a img {
@@ -295,7 +299,8 @@ footer span {
   color: #b2b8c4;
   font-size: 13px;
   line-height: 28px;
-  padding: 0 10px;
+  margin-right: 8px;
+
 }
 
 footer a:hover,
@@ -825,3 +830,25 @@ input[type="email"] {
   line-height: 1.6em;
   font-weight: 300;
 }
+
+.navoption {
+  color:#e9e9e9;
+  font-weight: 600;
+  font-size: 22px;
+  font-style: italic;
+  text-decoration: none;
+  text-transform: uppercase;
+
+}
+
+.navoption:hover {
+  color:rgb(235, 235, 235);
+}
+
+.file img {
+  height: 18px;
+  filter: invert(100%);
+  margin-left: 8px;
+  margin-top: 2px;
+}
+

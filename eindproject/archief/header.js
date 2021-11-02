@@ -10,11 +10,9 @@ class Header extends HTMLElement {
             <div class="files">
                 <a class="file" href="index.html" aria-current="page">
                     <span>hermanvulkers.com</span>
-                    <img src="images/icon.png">
                 </a>
                 <a class="file" href="http://www.cloudshots.nl">
                     <span>cloudshots.com</span>
-                    <img src="images/Cloudshots_icon.png">
                 </a>
             </div>
             
@@ -27,12 +25,14 @@ class Header extends HTMLElement {
 
         <div class="navbar">
             <nav class="navleft">
-                <a href="blog.html" class="navoption">
-                    < Blog</a>
-                        <a href="projects.html" class="navoption">Projects</a>
-                        <a href="aboutme.html" class="navoption">About Me ></a>
+                <a href="blog.html" class="tooltip"><img src="images/blog.png" alt="Blog"><span class="tooltiptext">Blog</span></a>
+                <a href="projects.html" class="tooltip"><img src="images/projects.png" alt="Projects"><span class="tooltiptext">Projects</span></a>
+                <a href="aboutme.html" class="tooltip"><img src="images/aboutme.png" alt="About Me"><span class="tooltiptext">About Me</span></a>
+                <span class="test">TEST</span>
             </nav>
-        
+            <nav class="navright">
+                <a href="https://github.com/hermanvulkers" target="_blank" rel="noopener noreferrer" class="tooltipright"><img src="images/github-11-48.png" alt="GitHub"><span class="tooltiptextright">GitHub</span></a> 
+            </nav>
         </div>
       `;
     }

@@ -2,7 +2,8 @@
 
 $operatie = readline('Welke operatie wil je uitvoeren? (+, -, %) ');
 
-if ($operatie == '+' || $operatie == '-' || $operatie == '%') {
+if ($operatie == '+' || $operatie == '-' || $operatie == '&') {
+    
     $getal1 = readline('Eerst getal? ');
 
     if (!is_numeric($getal1)) {
@@ -26,7 +27,9 @@ if ($operatie == '+' || $operatie == '-' || $operatie == '%') {
     if ($operatie == '%') {
         echo "Uw resultaat is: " . ($getal1 % $getal2);
     } 
+
 } else {
     echo "Geen geldige operatie" . PHP_EOL;
 }
+
 ?>

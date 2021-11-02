@@ -1,0 +1,27 @@
+body {
+    background-color: #101828;
+}
+
+h1,h2  {
+    color: white;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;
+
+}
+table {
+    color: white;
+    text-align: center;
+    background-color: #212938;
+
+}
+
+th, td {
+    padding: 10px;
+    border: #101828 solid 2px;
+
+}
