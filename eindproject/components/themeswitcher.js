@@ -1,18 +1,18 @@
 const button = document.querySelector(".themeswitcher");
 
+const theme = localStorage.getItem("theme");
+
+if (theme) {
+	document.body.classList.toggle ("light-theme", theme === "light");
+}
+
 button.addEventListener("click", function () {
-    if (document.body.classList.contains("light-theme")) {
-        // Turn light mode off
-        document.body.classList.toggle("light-theme");
-        document.getElementById('themeswitcher').innerHTML = `<span>Dark</span><img src="images/moon.png" alt="Choose website theme">`;
-    } else {
-        // Turn light mode on
-        document.body.classList.toggle("light-theme");
-        document.getElementById('themeswitcher').innerHTML = `<span>Light</span><img src="images/sunrise.png" alt="Choose website theme"></img>`;
-        
-        localStorage.setItem("mykey","myvalue");
-    }
+	const light = document.body.classList.contains("light-theme")
+	document.getElementById('themeswitcher').innerHTML = `<span>${light? 'Dark' : 'Light'}</span><img src="images/${light? 'moon' : 'sunrise'}.png" alt="Choose website theme">`;
+	document.body.classList.toggle("light-theme");
+	localStorage.setItem("theme", light ? "dark" : "light");
 });
+
 
 
 

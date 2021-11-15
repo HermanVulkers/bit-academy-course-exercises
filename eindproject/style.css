@@ -784,6 +784,27 @@ body.light-theme .tagbox a:hover {
   background-color: rgb(240, 240, 240);
 }
 
+body.light-theme .navoption {
+	color: #343434;
+}
+
+
+body.light-theme .navoption:hover {
+	color: #535353;
+  }
+
+body.light-theme .file img {
+	filter: invert(10%);
+}
+
+body.light-theme .navleft {
+	color:#343434;
+}
+
+body.light-theme .blinkingdot {
+	color:#343434;
+}
+
 /* Mailchimp */
 #mc_embed_signup_scroll {
   display: flex;
@@ -838,11 +859,19 @@ input[type="email"] {
   font-style: italic;
   text-decoration: none;
   text-transform: uppercase;
+}
 
+.navleft {
+	color:#e9e9e9;
+	font-weight: 600;
+	font-size: 22px;
+	font-style: italic;
+	text-decoration: none;
+	text-transform: uppercase;
 }
 
 .navoption:hover {
-  color:rgb(235, 235, 235);
+  color:rgb(241, 241, 241);
 }
 
 .file img {
@@ -852,3 +881,24 @@ input[type="email"] {
   margin-top: 2px;
 }
 
+.blinkingdot {
+	animation: blink 1s steps(1, end) infinite;
+	color:#e9e9e9;
+	font-weight: 600;
+	font-size: 22px;
+	font-style: italic;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

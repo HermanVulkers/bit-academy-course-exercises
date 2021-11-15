@@ -1,0 +1,33 @@
+body {
+    background-color: #101828;
+}
+
+h1,h2 {
+    color: red;
+}
+
+a { 
+    color: white;
+    text-decoration: none;
+}
+
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;
+
+}
+table {
+    color: rgb(255, 255, 255);
+    text-align: center;
+    background-color: #212938;
+
+}
+
+th, td {
+    padding: 10px;
+    border: #101828 solid 2px;
+
+}

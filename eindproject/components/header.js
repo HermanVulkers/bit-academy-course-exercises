@@ -5,7 +5,7 @@ class Header extends HTMLElement {
   
     connectedCallback() {
       this.innerHTML = `
-        <header>
+		<header>
 
             <div class="files">
                 <a class="file" href="index.html" aria-current="page">
@@ -26,11 +26,13 @@ class Header extends HTMLElement {
         </header>
 
         <div class="navbar">
-            <nav class="navleft">
-                <a href="blog.html" class="navoption">
-                    < Blog</a>
-                        <a href="projects.html" class="navoption">Projects</a>
-                        <a href="aboutme.html" class="navoption">About Me ></a>
+			<nav class="navleft">
+				<span>&lt;</span>
+				<a href="blog.html" class="navoption">Blog</a>
+				<a href="projects.html" class="navoption">Projects</a>
+				<a href="aboutme.html" class="navoption">About Me</a>
+				<span>&gt;</span>
+				<span class="blinkingdot"> &nbsp;_</span>
             </nav>
         
         </div>

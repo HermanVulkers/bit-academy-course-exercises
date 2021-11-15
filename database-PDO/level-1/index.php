@@ -16,25 +16,20 @@ try {
      $pdo = new PDO($dsn, $user, $pass, $options);
      echo "Connection succesful.";
 
-     $pdoQuery1 = "SELECT * FROM series";
-     if ($_GET['sortSeries'] == 'title') {
-          $pdoQuery1 .= " ORDER BY title ASC";
-     }
-     if ($_GET['sortSeries'] == 'rating') {
-          $pdoQuery1 .= " ORDER BY rating DESC";
-     }
-     $pdoQuery_run1 = $pdo->query($pdoQuery1);
+     $series_columns = array('title', 'rating');
+     $series_column = isset($_GET['series_column']) && in_array($_GET['series_column'], $series_columns) ? $_GET['series_column'] : $series_columns[0];
+     $series_sort_order = isset($_GET['series_order']) && strtolower($_GET['series_order']) == 'desc' ? 'DESC' : 'ASC';
 
-     $pdoQuery2 = "SELECT * FROM films";
-     if ($_GET['sortFilms'] == 'title') {
-          $pdoQuery2 .= " ORDER BY titel ASC";
-     }
-     if ($_GET['sortFilms'] == 'duration') {
-          $pdoQuery2 .= " ORDER BY duur ASC";
-     }
-     $pdoQuery_run2 = $pdo->query($pdoQuery2);
+     $series_result = $pdo->query('SELECT * FROM series ORDER BY ' .  $series_column . ' ' . $series_sort_order);
+     $series_asc_or_desc = $series_sort_order == 'ASC' ? 'desc' : 'asc';
 
-     $id = $_GET['ID'];
+     $films_columns = array('titel', 'duur');
+     $films_column = isset($_GET['films_column']) && in_array($_GET['films_column'], $films_columns) ? $_GET['films_column'] : $films_columns[0];
+     $films_sort_order = isset($_GET['films_order']) && strtolower($_GET['films_order']) == 'desc' ? 'DESC' : 'ASC';
+
+     $films_result = $pdo->query('SELECT * FROM films ORDER BY ' .  $films_column . ' ' . $films_sort_order);
+     $films_asc_or_desc = $films_sort_order == 'ASC' ? 'desc' : 'asc';
+
 } catch (PDOException $e) {
      throw new PDOException($e->getMessage(), (int)$e->getCode());
 }
@@ -64,41 +59,37 @@ try {
           <h2>Series</h2>
 
           <table>
-               <thead>
+               <tr>
+                    <th><a href="index.php?series_column=title&series_order=<?php echo $series_asc_or_desc; ?>">Title</a></th>
+                    <th><a href="index.php?series_column=rating&series_order=<?php echo $series_asc_or_desc; ?>">Rating</a></th>
+               </tr>
+                <?php while ($series_row = $series_result->fetch()) { ?>
                     <tr>
-                         <th><a href="index.php?sortSeries=title">Title</a></th>
-                         <th><a href="index.php?sortSeries=rating">Rating</a></th>
-                    </tr>
-               </thead>
-               <tbody>
-                    <?php foreach ($pdoQuery_run1 as $row) { ?>
-                         <tr>
-                              <td><?php echo $row['title']; ?></td>
-                              <td><?php echo $row['rating']; ?></td>
-                              <td><a href="series.php?ID=<?php echo $row['id'] ?>">Meer details<a></td>
-                         </tr>
-                    <?php } ?>
+                         <td><?php echo $series_row['title']; ?></td>
+                         <td><?php echo $series_row['rating']; ?></td>
 
-               </tbody>
+                         <td><a href="series.php?ID=<?php echo $series_row['id'] ?>">Meer details<a></td>
+                         <td><a href="series_edit.php?ID=<?php echo $series_row['id'] ?>">Wijzig film<a></td>
+                    </tr>
+                <?php } ?>
           </table>
           <h2>Films</h2>
+
           <table>
-               <thead>
+               <tr>
+                    <th><a href="index.php?films_column=titel&films_order=<?php echo $films_asc_or_desc; ?>">Title</a></th>
+                    <th><a href="index.php?films_column=duur&films_order=<?php echo $films_asc_or_desc; ?>">Duur</a></th>
+               </tr>
+
+                <?php while ($films_row = $films_result->fetch()) { ?>
                     <tr>
-                         <th><a href="index.php?sortFilms=title">Title</a></th>
-                         <th><a href="index.php?sortFilms=duration">Duration</a></th>
+                         <td><?php echo $films_row['titel']; ?></td>
+                         <td><?php echo $films_row['duur']; ?></td>
                     </tr>
-               </thead>
-               <tbody>
-                    <?php foreach ($pdoQuery_run2 as $row) { ?>
-                         <tr>
-                              <td><?php echo $row['titel']; ?></td>
-                              <td><?php echo $row['duur']; ?></td>
-                              <td><a href="films.php?ID=<?php echo $row['ID'] ?>">Meer details<a></td>
-                         </tr>
-                    <?php } ?>
-               </tbody>
+                <?php } ?>
+
           </table>
+
      </div>
 </body>
 
