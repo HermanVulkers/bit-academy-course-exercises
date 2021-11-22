@@ -64,7 +64,7 @@ li {
     box-shadow: 1px 1px 6px 0.2px #cfcfcf;
 }
 
-#searchbar:selection {
+#searchbar::selection {
     outline: none;
 }
 
